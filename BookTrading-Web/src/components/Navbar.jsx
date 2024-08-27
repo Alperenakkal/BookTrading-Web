@@ -1,13 +1,14 @@
 import React from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import '../styles/Navbar.css'
 
 const navigation = [
-  { name: 'Anasayfa', href: '#', current: true },
-  { name: 'Kayıt Ol', href: '#', current: false },
-  { name: 'Giriş Yap', href: '#', current: false },
-  { name: 'Ekip', href: '#', current: false },
-  { name: 'İletişim', href: '#', current: false },
+  { name: 'Anasayfa', href: '/', current: true },
+  { name: 'Kayıt Ol', href: '/', current: false },
+  { name: 'Giriş Yap', href: '/', current: false },
+  { name: 'Ekip', href: '/ekip', current: false },
+  { name: 'İletişim', href: '/iletişim', current: false },
 ]
 
 function classNames(...classes) {
@@ -17,7 +18,7 @@ function classNames(...classes) {
 
 function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-800" id='navbar'>
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
