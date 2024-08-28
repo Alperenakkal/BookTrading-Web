@@ -34,7 +34,7 @@ const posts = [
     },
   },
   {
-    id: 3,
+    id: 1,
     title: 'Boost your conversion rate',
     href: '#',
     description:
@@ -43,7 +43,7 @@ const posts = [
     datetime: '2020-03-16',
     category: { title: 'Marketing', href: '#' },
     author: {
-      name: 'Bomonti3',
+      name: 'Bomonti',
       role: 'Co-Founder / CTO',
       href: '#',
       imageUrl:
@@ -55,7 +55,6 @@ const posts = [
 
 export default function Anasayfa() {
   return (
-    
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">

@@ -31,7 +31,7 @@ export default function Girişyap() {
             alt="Your Company"
             src=  {logo}
             className="mx-auto h-20 w-auto rounded-lg"
-          /><br></br>
+          /><br></br><br></br>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
              Giriş Yap
@@ -40,7 +40,7 @@ export default function Girişyap() {
               Lütfen Giriş İçin Gerekli Bilgileri Doldurunuz.
             </p>
           </div>
-        </div>
+        </div><br></br>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">

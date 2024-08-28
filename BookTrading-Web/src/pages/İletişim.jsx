@@ -66,6 +66,7 @@ export default function İletişim() {
                 name="email"
                 type="email"
                 autoComplete="email"
+                placeholder=" Lütfen e-posta adresinizi giriniz."
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
@@ -97,6 +98,7 @@ export default function İletişim() {
                 id="phone-number"
                 name="phone-number"
                 type="tel"
+                placeholder="Lütfen telefon numaranızın başına '0' koyunuz."
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
@@ -111,6 +113,7 @@ export default function İletişim() {
                 id="message"
                 name="message"
                 rows={4}
+                placeholder=" Lütfen bize geri bildirimizi gönderiniz."
                 className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 defaultValue={''}
               />
