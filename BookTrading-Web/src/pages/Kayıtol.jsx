@@ -25,21 +25,19 @@ export default function Kayıtol() {
   const [selectedIl, setSelectedIl] = useState("");
   const [ilceler, setIlceler] = useState([]);
 
-  // JSON verisini yükleme
+ 
   useEffect(() => {
-    fetch("/cities.json") // JSON dosyasının yolunu buraya yazın
+    fetch("/cities.json") 
       .then((response) => response.json())
       .then((data) => {
-        setIller(data); // İller listesini JSON'dan al
+        setIller(data); 
       });
   }, []);
 
-  // İl seçildiğinde ilçeleri güncelle
   const handleIlChange = (event) => {
     const selectedIl = event.target.value;
     setSelectedIl(selectedIl);
 
-    // Seçilen ile göre ilçeleri filtreleme
     const selectedIlData = iller.find((il) => il.iller === selectedIl);
     setIlceler(selectedIlData ? selectedIlData.ilceler : []);
   };
