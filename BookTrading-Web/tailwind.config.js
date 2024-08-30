@@ -15,6 +15,10 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
+      fontFamily: {
+        roboto: ['Roboto', 'poppins'],
+        overpass: ['Overpass', 'sans-serif'], // Burada Roboto fontunu tanımlıyoruz
+      },
     },
   },
   plugins: [],
