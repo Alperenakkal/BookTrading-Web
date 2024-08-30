@@ -1,12 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'slide-down': 'slideDown 1s ease-out forwards',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'poppins'],
+        overpass: ['Overpass', 'sans-serif'], // Burada Roboto fontunu tanımlıyoruz
+      },
+    },
   },
   plugins: [],
 }
-
