@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import logo from "../assets/images/kitapagi.jpg";
+import kayitol from "../assets/images/Kayitol.png";
 
 const exampleBooks = [
   {
@@ -57,7 +58,7 @@ const stepsToUse = [
     description:
       "Platforma kaydol, kitaplarını paylaşmak için gereken bilgileri tamamla.",
     image:
-      "https://media.istockphoto.com/id/1303860322/vector/vector-illustration-register-now-speech-bubble-label.jpg?s=612x612&w=0&k=20&c=gOtVI0FayIfjaDVYL66XIbbMp1VXX_1Hsc8kFNKabAk=",
+      kayitol
   },
   {
     step: "02",
