@@ -78,10 +78,9 @@ const stepsToUse = [
 const Anasayfa = () => {
   useEffect(() => {
     const scrollElements = document.querySelectorAll(".scroll-reveal");
-
+    
     const elementInView = (el, dividend = 1) => {
       const elementTop = el.getBoundingClientRect().top;
-
       return (
         elementTop <=
         (window.innerHeight || document.documentElement.clientHeight) / dividend
@@ -93,18 +92,40 @@ const Anasayfa = () => {
       element.classList.remove("opacity-0", "translate-y-10");
     };
 
+    const hideScrollElement = (element) => {
+      element.classList.remove("opacity-100", "translate-y-0");
+      element.classList.add("opacity-0", "translate-y-10");
+    };
+
+    let throttleTimeout = null;
+
+    const throttle = (callback, delay) => {
+      if (throttleTimeout) return;
+
+      throttleTimeout = setTimeout(() => {
+        callback();
+        throttleTimeout = null;
+      }, delay);
+    };
+
     const handleScrollAnimation = () => {
       scrollElements.forEach((el) => {
         if (elementInView(el, 1.25)) {
           displayScrollElement(el);
+        } else {
+          hideScrollElement(el);
         }
       });
     };
 
-    window.addEventListener("scroll", handleScrollAnimation);
+    const handleScroll = () => {
+      throttle(() => requestAnimationFrame(handleScrollAnimation), 200);
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScrollAnimation);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -141,7 +162,6 @@ const Anasayfa = () => {
           showThumbs={false}
           showStatus={false}
           interval={5000}
-        
         >
           <div>
             <img
@@ -233,7 +253,7 @@ const Anasayfa = () => {
         </h3>
         <div className="flex items-center justify-center space-x-4 mb-4">
           <p className="text-gray-800">
-            Kitapağı, kitap takasının yeni adresi! Platforma üye olarak okuma
+            KitapAğı, kitap takasının yeni adresi! Platforma üye olarak okuma
             tutkunlarıyla tanışabilir, kendi kitaplarınızı paylaşabilir ve yeni
             kitaplara kolayca erişebilirsiniz. Kitaplarınızı paylaşarak okuma
             serüveninizi büyütün ve başkalarına ilham verin!
@@ -245,7 +265,26 @@ const Anasayfa = () => {
           />
         </div>
         <button className="bg-indigo-600 text-white rounded-full px-6 py-3 hover:bg-indigo-900 transition">
-          Daha Fazla Bilgi Edin
+          <a href="kayıtol">Daha Fazla Bilgi Edin</a>
+        </button>
+      </div>
+      <div className="w-full max-w-4xl px-6 py-10 bg-white rounded-lg shadow-lg text-center mb-8 transition transform hover:scale-105 duration-500 ease-in-out mt-28">
+        <h3 className="text-3xl font-extrabold text-purple-900 mb-6">
+          Kitapağı ile Hemen Başla!
+        </h3>
+        <div className="flex items-center justify-center space-x-4 mb-4">
+          <p className="text-gray-800">
+            Şimdi üye ol ve Kitapağı'nın sunduğu fırsatlarla okuma dünyanızı
+            genişletin! Kitap takası, bağış ve daha fazlası sizleri bekliyor.
+          </p>
+          <img
+            src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+            alt="Kitapağı Başla"
+            className="w-32 h-32 object-cover rounded-lg shadow-md"
+          />
+        </div>
+        <button className="bg-indigo-600 text-white rounded-full px-6 py-3 hover:bg-indigo-900 transition">
+          <a href="/kayıtol">Üye Ol ve Başla</a>
         </button>
       </div>
     </div>
