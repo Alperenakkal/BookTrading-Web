@@ -253,7 +253,7 @@ const Anasayfa = () => {
         </h3>
         <div className="flex items-center justify-center space-x-4 mb-4">
           <p className="text-gray-800">
-            Kitapağı, kitap takasının yeni adresi! Platforma üye olarak okuma
+            KitapAğı, kitap takasının yeni adresi! Platforma üye olarak okuma
             tutkunlarıyla tanışabilir, kendi kitaplarınızı paylaşabilir ve yeni
             kitaplara kolayca erişebilirsiniz. Kitaplarınızı paylaşarak okuma
             serüveninizi büyütün ve başkalarına ilham verin!
